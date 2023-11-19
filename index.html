@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Data</title>
+    <!-- Include Handlebars library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+</head>
+<body>
+    <h1>Student Data</h1>
+    <button onclick="displayByMajor('CIT')">CIT Majors</button>
+    <button onclick="displayByMajor('BUS')">Business Majors</button>
+    <div id="data-container"></div>
+
+    <script src="script.js"></script>
+</body>
+<script id="table-template" type="text/x-handlebars-template">
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Major</th>
+                <th>Midterm Score</th>
+                <th>Final Exam Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each students}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{major}}</td>
+                <td>{{midterm}}</td>
+                <td>{{final}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</script>
+
+</html>
